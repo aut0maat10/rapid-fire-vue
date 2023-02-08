@@ -1,6 +1,6 @@
 <template>
   <div>Take this quiz to get started!</div>
-  <button @click="startQuiz" class="rf-button">Start Quiz</button>
+  <button @click="startQuiz" class="rf-button">Start Quizzz</button>
 </template>
 
 <script>

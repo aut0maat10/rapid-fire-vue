@@ -1,6 +1,6 @@
 <template>
   <div class="base-component">
-    <h2>That is the question</h2>
+    <h2>{{ quizData.question }}</h2>
     <div class="options-wrapper">
       <label
         v-for="(option, index) in quizData.options"
