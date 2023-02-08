@@ -1,17 +1,19 @@
 <template>
   <StartScreen v-if="!quizStarted" @quizStarted="startHandler" />
   <component
-    v-if="quizStarted"
+    v-if="quizStarted && !quizCompleted"
     :quizData="quizData[step]"
     :key="step"
     :is="quizData[step].type"
     @submit="submitHandler"
   />
+  <EndScreen v-if="quizCompleted" :results="resultsStore" />
 </template>
 
 <script>
 import { reactive, ref } from "vue";
 import StartScreen from "./StartScreen.vue";
+import EndScreen from "./EndScreen.vue";
 import StandardQuestion from "./StandardQuestion.vue";
 export default {
   props: ["quizData"],
@@ -53,6 +55,7 @@ export default {
   components: {
     StartScreen,
     StandardQuestion,
+    EndScreen,
   },
 };
 </script>
